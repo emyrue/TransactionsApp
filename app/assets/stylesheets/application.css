@@ -1,19 +1,37 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  box-sizing: border-box;
+}
 
-/* Login & Sign-up Pages */
+body {
+  background-color: #4CD4CB;
+}
 
+.splash-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.splash-logo {
+  width: 45%;
+}
+
+.splash-buttons {
+  display: flex;
+  width: 75%;
+  justify-content: space-around;
+}
+
+.splash-button {
+  width: 35vw;
+  height: 50px;
+  font-size: 25px;
+  background-color: #A0C0FF;
+  border: 2px solid #020202;
+  border-radius: 5px;
+}
+
+.splash-button:hover {
+  background-color: #688BCE;
+}

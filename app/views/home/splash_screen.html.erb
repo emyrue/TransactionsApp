@@ -1,0 +1,11 @@
+<section class="splash-container">
+  <%= image_tag("budgetbuilder.png", class: "splash-logo") %>
+  <div class="splash-buttons">
+    <% if user_signed_in? %>
+      <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "splash-log-out splash-button" %>
+    <% else %>
+      <%= button_to "Sign up", new_user_registration_path, method: :get, class: "splash-sign-in splash-button" %>
+      <%= button_to "Log in", new_user_session_path, method: :get, class: "splash-log-in splash-button" %>
+    <% end %>
+  </div>
+</section>
