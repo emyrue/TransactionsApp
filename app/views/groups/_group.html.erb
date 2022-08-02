@@ -1,14 +1,17 @@
-<a href=<%= group_group_expenses_path(group) %>>
-<button>
+<a href=<%= group_group_expenses_path(group) %> class="transactions-link">
+<button class="transactions-button">
 <div class="index-category">
-  <p>
+  <p class="group-icon">
     <%= group.icon %>
   </p>
 
-  <p>
+  <p class="group-name">
     <%= group.name %>
   </p>
 
+  <p class="group-transactions-count">
+    Transactions: <%= group.group_expenses.count %>
+  </p>
 </div>
 </button>
 </a>

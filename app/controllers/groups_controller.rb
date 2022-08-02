@@ -4,19 +4,19 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.where(user_id: current_user.id)
   end
 
   # GET /groups/new
   def new
     @group = Group.new
-    @icons = ['✈️', '🍔', '🛍️', '🥕', '💰', '💅', '🍹', '🎁', '🏥', '🏠', '🚋,' '🚰']
+    @icons = ['✈️', '🍔', '🛍️', '🥕', '💰', '💅', '🍹', '🎁', '🏥', '🏠', '🚋', '🚰']
   end
 
   # POST /groups or /groups.json
   def create
     @group = Group.new(icon: group_params['icon'], name: group_params['name'], user_id: current_user.id)
-    @icons = ['✈️', '🍔', '🛍️', '🥕', '💰', '💅', '🍹', '🎁', '🏥', '🏠', '🚋,' '🚰']
+    @icons = ['✈️', '🍔', '🛍️', '🥕', '💰', '💅', '🍹', '🎁', '🏥', '🏠', '🚋', '🚰']
     respond_to do |format|
       if @group.save
         format.html { redirect_to groups_path(@group), notice: "Group was successfully created." }

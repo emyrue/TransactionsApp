@@ -1,13 +1,17 @@
 <nav class="navbar">
+  <a href=<%= splash_screen_path %>>
+    <button class="menu-button">
+      <%= image_tag("hamburger.png") %>
+    </button>
+  </a>
+  <h1 class="heading">Categories</h1>
 </nav>
 <p style="color: green"><%= notice %></p>
 
-<h1>Groups</h1>
-
-<div id="groups">
+<div class="groups">
   <% @groups.each do |group| %>
     <%= render group %>
   <% end %>
+  <%= button_to "New group", new_group_path, method: :get %>
 </div>
 
-<%= button_to "New group", new_group_path, method: :get %>
