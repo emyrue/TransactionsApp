@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   resources :groups
   resources :expenses
   resources :users
+  get "splash_screen", to: "home#splash_screen"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  root "home#splash_screen"
   # Defines the root path route ("/")
   # root "articles#index"
 end

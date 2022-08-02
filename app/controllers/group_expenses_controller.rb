@@ -1,5 +1,6 @@
 class GroupExpensesController < ApplicationController
   before_action :set_group_expense, only: %i[ show edit update destroy ]
+  before_action :splash_pad
 
   # GET /group_expenses or /group_expenses.json
   def index
@@ -66,5 +67,11 @@ class GroupExpensesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def group_expense_params
       params.fetch(:group_expense, {})
+    end
+
+    def splash_pad
+      unless user_signed_in?
+        redirect_to splash_screen_path
+      end
     end
 end

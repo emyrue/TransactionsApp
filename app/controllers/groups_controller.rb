@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[ show edit update destroy ]
+  before_action :splash_pad
 
   # GET /groups or /groups.json
   def index
@@ -66,5 +67,11 @@ class GroupsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def group_params
       params.require(:group).permit(:name, :icon)
+    end
+
+    def splash_pad
+      unless user_signed_in?
+        redirect_to splash_screen_path
+      end
     end
 end

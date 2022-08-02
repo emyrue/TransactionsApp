@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[ show edit update destroy ]
+  before_action :splash_pad
 
   # GET /expenses or /expenses.json
   def index
@@ -66,5 +67,11 @@ class ExpensesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def expense_params
       params.require(:expense).permit(:name, :amount)
+    end
+
+    def splash_pad
+      unless user_signed_in?
+        redirect_to splash_screen_path
+      end
     end
 end

@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :splash_pad
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    redirect_to new_user_session_path
   end
 
   # GET /users/1 or /users/1.json
   def show
+    redirect_to new_user_session_path
   end
 
   # GET /users/new
@@ -66,5 +68,11 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:name)
+    end
+
+    def splash_pad
+      unless user_signed_in?
+        redirect_to splash_screen_path
+      end
     end
 end
