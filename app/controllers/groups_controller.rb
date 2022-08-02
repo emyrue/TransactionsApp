@@ -7,54 +7,24 @@ class GroupsController < ApplicationController
     @groups = Group.all
   end
 
-  # GET /groups/1 or /groups/1.json
-  def show
-  end
-
   # GET /groups/new
   def new
     @group = Group.new
-  end
-
-  # GET /groups/1/edit
-  def edit
+    @icons = ['✈️', '🍔', '🛍️', '🥕', '💰', '💅', '🍹', '🎁', '🏥', '🏠', '🚋,' '🚰']
   end
 
   # POST /groups or /groups.json
   def create
-    @group = Group.new(group_params)
-
+    @group = Group.new(icon: group_params['icon'], name: group_params['name'], user_id: current_user.id)
+    @icons = ['✈️', '🍔', '🛍️', '🥕', '💰', '💅', '🍹', '🎁', '🏥', '🏠', '🚋,' '🚰']
     respond_to do |format|
       if @group.save
-        format.html { redirect_to group_url(@group), notice: "Group was successfully created." }
+        format.html { redirect_to groups_path(@group), notice: "Group was successfully created." }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @group.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /groups/1 or /groups/1.json
-  def update
-    respond_to do |format|
-      if @group.update(group_params)
-        format.html { redirect_to group_url(@group), notice: "Group was successfully updated." }
-        format.json { render :show, status: :ok, location: @group }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /groups/1 or /groups/1.json
-  def destroy
-    @group.destroy
-
-    respond_to do |format|
-      format.html { redirect_to groups_url, notice: "Group was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
