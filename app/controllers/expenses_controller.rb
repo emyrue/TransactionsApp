@@ -27,16 +27,19 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       if @expense.save
         @group_expense = GroupExpense.new(expense_id: @expense.id, group_id: params[:group_id])
-        if @group_expense.save!
-          format.html { redirect_to expense_url(@expense), notice: "Expense was successfully created." }
+        if @group_expense.save
+          format.html { redirect_to group_expenses_path(params[:group_id]), notice: "Expense was successfully created." }
           format.json { render :show, status: :created, location: @expense }
+        else
+          @expense.destroy
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @expense.errors, status: :unprocessable_entity }
         end
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
-    redirect_to group_expenses_path(params[:group_id])
   end
 
   # PATCH/PUT /expenses/1 or /expenses/1.json

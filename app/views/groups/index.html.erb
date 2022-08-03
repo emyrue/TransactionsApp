@@ -5,6 +5,9 @@
     </button>
   </a>
   <h1 class="heading">Categories</h1>
+  <%= button_to destroy_user_session_path, method: :delete, class: "menu-button" do %>
+    <%= image_tag("logout.png") %>
+  <% end %>
 </nav>
 <p style="color: green"><%= notice %></p>
 
