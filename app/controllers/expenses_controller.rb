@@ -4,7 +4,11 @@ class ExpensesController < ApplicationController
 
   # GET /expenses or /expenses.json
   def index
-    @expenses = Expense.all
+    @expenses = Group.find(params[:group_id]).group_expenses.includes([:expense])
+    @total = 0;
+    @expenses.each do |expense|
+      @total += expense.expense.amount
+    end
   end
 
   # GET /expenses/1 or /expenses/1.json

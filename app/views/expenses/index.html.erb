@@ -11,10 +11,21 @@
 </nav>
 
 <p style="color: green"><%= notice %></p>
-<div id="expenses">
-  <% @expenses.each do |expense| %>
-    <%= render expense %>
-  <% end %>
-</div>
 
-<%= button_to "New expense", new_group_expense_path, method: :get, class: "" %>
+<section class="total">
+  <p class="transaction-name"> Total: </p>
+  <p class="amount">$<%= @total %></p>
+</section>
+<div class="all-transactions">
+  <% @expenses.each do |expense| %>
+    <div class="single-transaction">
+      <p class="transaction-name">
+        <%= expense.expense.name %>
+      </p>
+      <p class="amount">
+        $<%= expense.expense.amount %>
+      </p>
+    </div>
+  <% end %>
+  <%= button_to "New expense", new_group_expense_path, method: :get, class: "form-submit" %>
+</div>

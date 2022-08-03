@@ -76,13 +76,12 @@ body {
 
 .transactions-button {
   width: 100%;
-  background: linear-gradient(#5FB523, #549f1e);
-  border: 2px solid #020202;
-  border-radius: 5px;
+  background-color: white;
+  border: none;
 }
 
 .transactions-button:hover {
-  background: linear-gradient(#549f1e, #3c7315);
+  background-color: rgb(167, 167, 167);
 }
 
 .index-category {
@@ -149,6 +148,7 @@ label {
   border: none;
   border-radius: 5px;
   padding: 5px;
+  margin: 10px;
 }
 
 .form-submit:hover {
@@ -174,3 +174,39 @@ label {
 .single-checkbox {
   display: flex;
 }
+
+.total {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.all-transactions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-transaction {
+  width: 80%;
+  display: flex;
+  background-color: white;
+  margin: 10px;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.transaction-name {
+  font-size: 30px;
+}
+
+.amount {
+  font-size: 30px;
+}
+

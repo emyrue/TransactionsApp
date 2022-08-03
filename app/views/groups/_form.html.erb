@@ -1,4 +1,13 @@
 <%= form_with model: group, class: 'form' do |form| %>
+  <nav class="navbar">
+  <a href=<%= groups_path %> class="menu-button">
+      <%= image_tag("back.png") %>
+  </a>
+  <h1 class="heading">New Category</h1>
+  <div class="actions">
+    <%= form.submit 'Next', :class => 'menu-button' %>
+  </div>
+</nav>
   <% if group.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
@@ -19,9 +28,5 @@
   <div class="field">
     <%= form.label :icon, style: "display: block" %>
     <%= form.select :icon, @icons.map { |i| [i.to_s, i.to_s] }, {}, class: "icon-select" %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Create Category', :class => 'form-submit' %>
   </div>
 <% end %>
