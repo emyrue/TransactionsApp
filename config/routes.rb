@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   }
 
   resources :groups, only: [:index, :new, :create] do
-    resources :group_expenses, only: [:index, :new, :create]
+    resources :expenses, only: [:index, :new, :create]
   end
   resources :expenses
   get "splash_screen", to: "home#splash_screen"

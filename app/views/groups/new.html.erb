@@ -1,17 +1,11 @@
 <nav class="navbar">
-  <a href=<%= splash_screen_path %>>
+  <a href=<%= groups_path %>>
     <button class="menu-button">
-      <%= image_tag("hamburger.png") %>
+      <%= image_tag("back.png") %>
     </button>
   </a>
   <h1 class="heading">New Category</h1>
 </nav>
 <section class="form-container">
 <%= render "form", group: @group %>
-
-<br>
-
-<div>
-  <%= link_to "Back to groups", groups_path %>
-</div>
 </section>

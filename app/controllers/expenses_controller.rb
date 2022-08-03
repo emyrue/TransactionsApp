@@ -22,41 +22,45 @@ class ExpensesController < ApplicationController
 
   # POST /expenses or /expenses.json
   def create
-    @expense = Expense.new(expense_params)
+    @expense = Expense.new(user_id: current_user.id, name: expense_params[:name], amount: expense_params[:amount])
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to expense_url(@expense), notice: "Expense was successfully created." }
-        format.json { render :show, status: :created, location: @expense }
+        @group_expense = GroupExpense.new(expense_id: @expense.id, group_id: params[:group_id])
+        if @group_expense.save!
+          format.html { redirect_to expense_url(@expense), notice: "Expense was successfully created." }
+          format.json { render :show, status: :created, location: @expense }
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
     end
+    redirect_to group_expenses_path(params[:group_id])
   end
 
   # PATCH/PUT /expenses/1 or /expenses/1.json
-  def update
-    respond_to do |format|
-      if @expense.update(expense_params)
-        format.html { redirect_to expense_url(@expense), notice: "Expense was successfully updated." }
-        format.json { render :show, status: :ok, location: @expense }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @expense.update(expense_params)
+  #       format.html { redirect_to expense_url(@expense), notice: "Expense was successfully updated." }
+  #       format.json { render :show, status: :ok, location: @expense }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @expense.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /expenses/1 or /expenses/1.json
-  def destroy
-    @expense.destroy
+  # def destroy
+  #   @expense.destroy
 
-    respond_to do |format|
-      format.html { redirect_to expenses_url, notice: "Expense was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html { redirect_to expenses_url, notice: "Expense was successfully destroyed." }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
