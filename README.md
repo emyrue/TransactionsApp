@@ -29,6 +29,9 @@ bundle install
 rspec
 ```
 
+## Live Demo
+[Link](https://quiet-fjord-22811.herokuapp.com/splash_screen)
+
 ## Authors
 
 👤 **Emily Robertson**
