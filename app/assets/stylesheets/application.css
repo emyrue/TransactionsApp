@@ -7,8 +7,9 @@
 body {
   background-color: whitesmoke;
 }
+
 .navbar {
-  background: linear-gradient(#3778C2, #2e64a2);
+  background: linear-gradient(#3778c2, #2e64a2);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,7 +35,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #3778C2;
+  background-color: #3778c2;
 }
 
 .splash-logo {
@@ -51,7 +52,7 @@ body {
   width: 35vw;
   height: 50px;
   font-size: 25px;
-  background: linear-gradient(#5FB523, #549f1e);
+  background: linear-gradient(#5fb523, #549f1e);
   border: none;
   border-radius: 5px;
 }
@@ -144,7 +145,7 @@ label {
 }
 
 .form-submit {
-  background: linear-gradient(#5FB523, #549f1e);
+  background: linear-gradient(#5fb523, #549f1e);
   border: none;
   border-radius: 5px;
   padding: 5px;
@@ -209,4 +210,3 @@ label {
 .amount {
   font-size: 30px;
 }
-
