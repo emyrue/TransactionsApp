@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     @user = User.create(name: 'Emily', email: 'emily@emily.com', password: '123456', password_confirmation: '123456')
   end
 
-  it "Name must be present" do
+  it 'Name must be present' do
     @user.name = nil
     expect(@user).to_not be_valid
   end

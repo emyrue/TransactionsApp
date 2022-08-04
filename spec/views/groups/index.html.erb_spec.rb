@@ -10,11 +10,11 @@ RSpec.describe 'Group Index Page', type: :feature do
     visit groups_path
   end
 
-  it "renders the correct text" do
-    expect(page).to have_content("Transportation")
+  it 'renders the correct text' do
+    expect(page).to have_content('Transportation')
   end
 
-  it "a click on a group should lead to the correct page" do
+  it 'a click on a group should lead to the correct page' do
     click_link 'Transportation'
     expect(current_path).to eq(group_expenses_path(@group))
   end

@@ -6,12 +6,12 @@ RSpec.describe Group, type: :model do
     @group = Group.create(name: 'Category', icon: '@', user_id: @user.id)
   end
 
-  it "Name must be present" do
+  it 'Name must be present' do
     @group.name = nil
     expect(@group).to_not be_valid
   end
 
-  it "Icon must be present" do
+  it 'Icon must be present' do
     @group.name = nil
     expect(@group).to_not be_valid
   end

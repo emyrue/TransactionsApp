@@ -6,17 +6,17 @@ RSpec.describe Expense, type: :model do
     @expense = Expense.create(name: 'Transaction', amount: 3, user_id: @user.id)
   end
 
-  it "Name must be present" do
+  it 'Name must be present' do
     @expense.name = nil
     expect(@expense).to_not be_valid
   end
 
-  it "Amount must be present" do
+  it 'Amount must be present' do
     @expense.amount = nil
     expect(@expense).to_not be_valid
   end
 
-  it "Amount must be greater than 0" do
+  it 'Amount must be greater than 0' do
     @expense.amount = -1
     expect(@expense).to_not be_valid
   end

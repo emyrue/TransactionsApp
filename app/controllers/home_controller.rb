@@ -1,4 +1,3 @@
 class HomeController < ApplicationController
-  def splash_screen
-  end
+  def splash_screen; end
 end

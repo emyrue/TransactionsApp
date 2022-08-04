@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "expenses/index", type: :feature do
+RSpec.describe 'expenses/index', type: :feature do
   before(:example) do
     @user = User.create(name: 'Emily', email: 'emily@emily.com', password: '123456', password_confirmation: '123456')
     sign_in @user
@@ -10,11 +10,11 @@ RSpec.describe "expenses/index", type: :feature do
     visit group_expenses_path(@group)
   end
 
-  it "renders the correct text" do
+  it 'renders the correct text' do
     expect(page).to have_content('My Transaction')
   end
 
-  it "should have a button to add a new expense" do
+  it 'should have a button to add a new expense' do
     expect(page).to have_content('New Transaction')
   end
 
