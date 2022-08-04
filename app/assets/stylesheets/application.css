@@ -1,15 +1,212 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  box-sizing: border-box;
+  font-family: Roboto, Helvetica, sans-serif;
+  margin: 0;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.navbar {
+  background: linear-gradient(#3778c2, #2e64a2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 10px;
+}
+
+.menu-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.heading {
+  color: white;
+}
+
+.splash-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3778c2;
+}
+
+.splash-logo {
+  width: 45%;
+}
+
+.splash-buttons {
+  display: flex;
+  width: 75%;
+  justify-content: space-around;
+}
+
+.splash-button {
+  width: 35vw;
+  height: 50px;
+  font-size: 25px;
+  background: linear-gradient(#5fb523, #549f1e);
+  border: none;
+  border-radius: 5px;
+}
+
+.splash-button:hover {
+  background: linear-gradient(#549f1e, #3c7315);
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.transactions-link {
+  width: 80%;
+  margin: 20px;
+  position: relative;
+}
+
+.transactions-button {
+  width: 100%;
+  background-color: white;
+  border: none;
+}
+
+.transactions-button:hover {
+  background-color: rgb(167, 167, 167);
+}
+
+.index-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+}
+
+.group-icon {
+  font-size: 60px;
+}
+
+.group-name {
+  font-size: 30px;
+}
+
+.group-transactions-count {
+  font-size: 15px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+}
+
+.form {
+  width: 100%;
+}
+
+.field,
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+label {
+  align-self: flex-start;
+  font-weight: 100;
+}
+
+.icon-select,
+.name-select {
+  width: 100%;
+  margin: 10px;
+  border: none;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+  padding: 10px;
+  font-weight: 100;
+}
+
+.form-submit {
+  background: linear-gradient(#5fb523, #549f1e);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.form-submit:hover {
+  background: linear-gradient(#549f1e, #3c7315);
+}
+
+.left {
+  margin-right: auto;
+  font-weight: 100;
+}
+
+.checkbox {
+  display: block;
+}
+
+.checkbox-field {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.single-checkbox {
+  display: flex;
+}
+
+.total {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.all-transactions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-transaction {
+  width: 80%;
+  display: flex;
+  background-color: white;
+  margin: 10px;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.transaction-name {
+  font-size: 30px;
+}
+
+.amount {
+  font-size: 30px;
+}

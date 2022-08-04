@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <a href=<%= groups_path %>>
+    <button class="menu-button">
+      <%= image_tag("back.png") %>
+    </button>
+  </a>
+  <h1 class="heading">Transactions</h1>
+  <%= button_to destroy_user_session_path, method: :delete, class: "menu-button" do %>
+    <%= image_tag("logout.png") %>
+  <% end %>
+</nav>
+
+<p style="color: green"><%= notice %></p>
+
+<section class="total">
+  <p class="transaction-name"> Total: </p>
+  <p class="amount">$<%= @total %></p>
+</section>
+<div class="all-transactions">
+  <% @expenses.each do |expense| %>
+    <div class="single-transaction">
+      <p class="transaction-name">
+        <%= expense.expense.name %>
+      </p>
+      <p class="amount">
+        $<%= expense.expense.amount %>
+      </p>
+    </div>
+  <% end %>
+  <%= button_to "New Transaction", new_group_expense_path, method: :get, class: "form-submit" %>
+</div>

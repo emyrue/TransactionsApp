@@ -1,0 +1,17 @@
+<a href=<%= group_expenses_path(group) %> class="transactions-link">
+<button class="transactions-button">
+<div class="index-category">
+  <p class="group-icon">
+    <%= group.icon %>
+  </p>
+
+  <p class="group-name">
+    <%= group.name %>
+  </p>
+
+  <p class="group-transactions-count">
+    Transactions: <%= group.group_expenses.count %>
+  </p>
+</div>
+</button>
+</a>
