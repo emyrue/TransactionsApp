@@ -30,7 +30,8 @@ rspec
 ```
 
 ## Live Demo
-[Link](https://quiet-fjord-22811.herokuapp.com/splash_screen)
+[Site](https://quiet-fjord-22811.herokuapp.com/splash_screen)
+[Video](https://www.loom.com/share/fbfa64a128444c029c8b589b9b88b5a7)
 
 ## Authors
 
@@ -53,9 +54,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- [Gregoire Vella](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 
 ## 📝 License
 
